@@ -12,20 +12,21 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 iris = datasets.load_iris()
-iris_X = iris.data
-iris_y = iris.target
+iris_X = iris.data#表示花的一些花瓣的长宽，茎的长宽
+iris_y = iris.target#表示花的种类
 
 ##print(iris_X[:2, :])
-##print(iris_y)
+# print(iris_y)
 
 X_train, X_test, y_train, y_test = train_test_split(
     iris_X, iris_y, test_size=0.3)
 
-##print(y_train)
+# print(X_train)
+# print(y_train)
 
 knn = KNeighborsClassifier()
 knn.fit(X_train, y_train)
-print(knn.predict(X_test))
+print(knn.predict(X_test))#江训练好的模型由花朵的一些属性去预测花朵的类型
 print(y_test)
 
 
